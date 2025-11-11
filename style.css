@@ -541,6 +541,25 @@ img.contact-image {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 12px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
 /* --- Responsiveness (Mobile View) --- */
 @media (max-width: 768px) {
     .nav-menu {
@@ -662,7 +681,7 @@ img.contact-image {
 
     .whatsapp-button:hover {
         background-color: #128C7E;
-    }
+        }
 
 /* Gallery Section */
 .Gallery-section {
