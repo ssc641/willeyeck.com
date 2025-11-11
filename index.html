@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Willeyeck Engineering - Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar selection-content">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo4.png" alt="Willeyeck Engineering company logo" class="logo-img" />
+                <h2 class="logo-text">Willeyeck Engineering & Construction</h2>
+            </a>
+            <ul class="nav-menu">
+
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Reviews</a></li>
+                <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="Contacts.html" class="nav-link current-page">Contacts</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hamburger" onclick="toggleSidebar()">
+        ☰
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="sidebar" id="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="#">Reviews</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Contacts.html" class="current-page">Contacts</a>
+    </div>
+    <main>
+        <!-- Hero section -->
+        <section class="hero-section">
+            <div class="selection-content">
+                <div class="hero-details">
+                    <h1 class="title">Pledge to meet all your engineering and construction needs!</h1>
+                    <h3 class="subtitle">Building your dreams together side by side</h3>
+                    <p class="description">Willeyeck Engineering PVT your construction partner to build a better future for your family a safe enviroment for your kids and a life-changing project for you company.</p>
+                    <div class="buttons-wrapper">
+                        <a href="Contacts.html" class="nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper">
+                <img src="images/himg.png" class="hero-image" />
+            </div>
+
+            <div class="hero-text">
+                <h1 class="title">Your vision your future</h1>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="selection-content about-container">
+                <div class="about-text-content">
+                    <h2 class="about-title">Who We Are: About Us</h2>
+                    <p>
+                        At Willeyeck we believe in your vision for a better future. We pride ourselves in making your vision a reality in every way possible <i><b>Your vision your future</b></i>.  We are your go to guy in all matters of Construction and Engineering : House plan drawing  Plumbing  Construction  Roofing   Electronic Wiring  Tiling etc Let us build a future together, a one where you design and we complement. Willeyeck Engineering your vision your future . Located at : <b>Office number 210A Old mutual building, Cabs Gweru.</b>
+                    </p>
+                    <p class="about-description">
+                        Our core strength lies in our experienced team of engineers and construction specialists who tackle every challenge with a solution-oriented approach. We believe in building not just structures, but lasting partnerships with our clients, ensuring every project reflects our high standards of excellence.
+                    </p>
+                    <a href="Contacts.html" class="btn btn-primary about-btn">Talk to an Expert</a>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="images/logo4.png" alt="Team working on a plan" class="about-image" />
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="placeholder-section"><h2>Our Services</h2><p>We have well trained and highly qualified go-to team to assist you in all matters of Construction, engineering, house plan drawing, plumbing roofing, tiling and electric wirering  </p></section>
+        <section id="reviews" class="placeholder-section"> </section>
+
+        <section class="contact-section">
+            <h2>Get in Touch</h2>
+
+            <form action="mailto:info@willeyeck.engineering" method="post" enctype="text/plain">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit">Send Email</button>
+            </form>
+
+            <a href="https://wa.me/263719630090" target="_blank" class="whatsapp-button">
+                <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+        </section>
+
+    </main>
+    <!-- JavaScript -->
+    <script> function toggleSidebar() {
+
+    const sidebar = document.getElementById("sidebar");
+    sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
+
+}
+
+    window.addEventListener('resize', function () {
+        if (window.innerWidth > 768) {
+            sidebar.style.left = "-250px";
+        }
+    });
+
+
+        </script>
+
+</body>
+</html>
