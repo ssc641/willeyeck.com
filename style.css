@@ -682,6 +682,47 @@ img.contact-image {
     .whatsapp-button:hover {
         background-color: #128C7E;
         }
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366;
+  color: white;
+  font-size: 24px;
+  padding: 12px 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.floating-whatsapp .tooltip {
+  visibility: hidden;
+  opacity: 0;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 8px;
+  position: absolute;
+  right: 60px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  transition: opacity 0.3s ease;
+}
+
+.floating-whatsapp:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+    }
 
 /* Gallery Section */
 .Gallery-section {
@@ -829,6 +870,6 @@ about-section {
 }
 
 .about-btn {
-    margin-top: 35px;
+    margin-top: 65px;
     display: inline-block;
 }
