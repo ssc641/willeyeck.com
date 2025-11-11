@@ -759,8 +759,8 @@ img.contact-image {
     margin-top: 8px;
     font-size: 1rem;
     color: #555;
-}
-
+    }
+    
 /* Responsive tweak for small screens */
 @media screen and (max-width: 798px) {
     .Gallery-image {
