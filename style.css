@@ -765,7 +765,7 @@ img.contact-image {
 
 
 
-.about-section {
+about-section {
     padding: 80px 0;
     background-color: var(--accent-color);
 }
@@ -811,46 +811,4 @@ img.contact-image {
 
 .about-btn {
     margin-top: 20px;
-}
-
-/* Placeholder for other sections */
-.placeholder-section {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #f7f7f7; /* Light gray background */
-    border-top: 1px solid #ddd;
-    color: var(--text-dark);
-}
-
-
-/* --- 6. Media Query (Mobile Layout) --- */
-@media screen and (max-width: 768px) {
-    /* About Section adjustments for mobile */
-    .about-section {
-        padding: 40px 0;
-    }
-
-    .about-container {
-        flex-direction: column; /* Stack image and text vertically */
-        gap: 30px;
-        text-align: center;
-    }
-
-    .about-text-content {
-        order: 2; /* Move text below the image */
-    }
-
-    .about-title {
-        font-size: var(--font-size-l);
-        border-left: none; /* Remove side border on mobile */
-        padding-left: 0;
-        border-bottom: 3px solid var(--secondary-color); /* Add bottom border instead */
-        padding-bottom: 10px;
-        color: white;
-    }
-
-    .about-description {
-        font-size: var(--font-size-n);
-        color: white;
-    }
 }
