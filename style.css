@@ -204,6 +204,10 @@ header {
 /* --- Hero Section --- (Split into two styles from original) */
 
 /* Style 1: With background image */
+
+.hero-section {
+    padding: 96px;
+    }
 .hero-section-bg {
     background: url('images/himg.png') center/cover no-repeat;
     position: relative;
