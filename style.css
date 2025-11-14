@@ -1,26 +1,18 @@
-/* Importing Google Fonts: Miniver and Poppins are imported but not used, so they are commented out
-@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+/*
+|--------------------------------------------------------------------------
+| 1. CSS VARIABLES (Design Tokens)
+|--------------------------------------------------------------------------
 */
-
-/* Global Reset and Base Styles */
-* {
-    /* FIX: Standard reset values for margin and padding */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* FIX: Removed !important and used a more professional default stack */
-    font-family: 'Poppins', 'Miniver', Calibri, sans-serif;
-}
 
 :root {
     /* Colors */
-    --color-white: #F5F5F5;
+    --color-white: #FFFFFF;
     --color-dark: #191862;
-    /* FIX: Corrected primary color hex to a proper value, assuming white was intended */
-    --color-primary: #FFFFFF;
-    --color-secondary: #FF6A00;
-    --color-accent: #F9A825;
-    --color-medium: #B0B0B0;
+    --color-primary: #FFFFFF;      /* Main Background/Header Color */
+    --color-secondary: #FF6A00;    /* Primary Action/Accent Color (Orange) */
+    --color-accent: #F9A825;       /* Secondary Accent Color (Yellow/Gold) */
+    --color-medium: #B0B0B0;       /* Neutral/Border Color */
+    --color-text-dark: #333333;    /* Standard dark text color */
 
     /* Font Size (Using standard 'step' naming convention) */
     --fs-s: 0.9rem;
@@ -43,15 +35,35 @@
 
     /* Site Max Width */
     --site-max-width: 1300px;
+    
+    /* Spacing (Optional, but recommended for consistent layout) */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
 }
 
-/* Base Utility/Element Styles */
+
+/*
+|--------------------------------------------------------------------------
+| 2. GLOBAL RESET & BASE STYLES
+|--------------------------------------------------------------------------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Using a standard font stack with Poppins/Miniver as the first choice */
+    font-family: 'Poppins', 'Miniver', Calibri, sans-serif;
+}
+
 ul {
     list-style: none;
 }
 
 a {
     text-decoration: none;
+    color: var(--color-dark); /* Standard dark link color */
 }
 
 button {
@@ -61,47 +73,50 @@ button {
 }
 
 img {
-    /* FIX: Removed max-width 100% since width: 100% is used for other image classes */
     max-width: 100%;
-    height: auto; /* Ensures aspect ratio is maintained */
+    height: auto;
+    display: block; /* Prevents tiny gaps below images */
 }
 
 .section-content {
     max-width: var(--site-max-width);
     margin: auto;
-    padding: 0 20px;
+    padding: 0 var(--spacing-md);
 }
 
 .title {
-    font-size: var(--fs-l); /* Used variable */
-    font-weight: var(--fw-semibold); /* Used variable */
+    font-size: var(--fs-l);
+    font-weight: var(--fw-semibold);
     letter-spacing: 1px;
     margin-bottom: 0.4rem;
-    /* FIX: Removed global top margin, let parent sections control spacing */
-    /* margin-top: 100px; */
 }
 
 .subtitle {
-    font-size: var(--fs-m); /* Used variable */
-    font-weight: var(--fw-medium); /* Used variable */
+    font-size: var(--fs-m);
+    font-weight: var(--fw-medium);
 }
 
-/* --- Navigation & Header --- */
+
+/*
+|--------------------------------------------------------------------------
+| 3. HEADER & NAVIGATION
+|--------------------------------------------------------------------------
+*/
+
 header {
     position: fixed;
     width: 100%;
-    z-index: 100;
-    background: var(--color-primary); /* Use variable */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added subtle shadow */
+    z-index: 1000; /* Increased z-index */
+    background: var(--color-primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar {
-    /* FIX: Removed negative margins and fixed padding structure */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--color-primary); /* Use variable */
+    background-color: var(--color-primary);
 }
 
 .nav-logo {
@@ -111,63 +126,64 @@ header {
 }
 
 .logo-img {
-    height: 100px; /* Consistent height */
+    height: 100px;
     margin-right: 5px;
 }
 
 .logo-text {
-    font-size: clamp(1rem, 4vw + 0.5rem, 2rem); /* Use variable */
+    /* Fixed the clamp() syntax by removing the font-size variable override */
+    font-size: clamp(1rem, 4vw + 0.5rem, 2rem);
     white-space: nowrap;
     margin: 0;
-    color: var(--color-dark); /* Added color */
+    color: var(--color-dark);
+    line-height: 1; /* Ensures text aligns well */
 }
 
 .nav-menu {
     display: flex;
-    gap: 20px;
+    gap: var(--spacing-md);
     margin: 0;
     padding: 0;
 }
 
-/* Close button inside nav-menu is likely for mobile menu in JS, should be hidden by default */
+/* Hide mobile menu close button on desktop */
 .nav-menu li:first-child {
     display: none;
 }
 
 .nav-link {
-    color: #333;
+    color: var(--color-text-dark);
     font-weight: var(--fw-medium);
-    padding-bottom: 5px; /* Added for border-bottom effect */
+    padding-bottom: 5px;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-link:hover {
-    color: var(--color-secondary); /* Use variable */
-    border-bottom: 2px solid var(--color-medium); /* Use variable */
+    color: var(--color-secondary);
+    border-bottom: 2px solid var(--color-medium);
     font-weight: var(--fw-bold);
 }
 
-/* --- Hamburger & Sidebar Menu --- */
+
+/*
+|--------------------------------------------------------------------------
+| 4. HAMBURGER & SIDEBAR
+|--------------------------------------------------------------------------
+*/
+
 .hamburger {
-    display: block; /* Default for mobile */
-    font-size: 1.5rem; /* Increased size */
+    display: block; 
+    font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
     position: fixed;
     top: 20px;
-    right: 20px; /* Consistent right position */
+    right: 20px;
     z-index: 1002;
     background-color: transparent;
     border-radius: var(--br-s);
     color: var(--color-secondary);
-}
-hide hamburger on desktop
-@media screen and (min-width: 769px) {
-    .hamburger{
-        display: none;
-    }
-    .nav-menu{
-        display: flex;
-    }
+    transition: transform 0.3s ease;
 }
 
 .sidebar {
@@ -176,11 +192,12 @@ hide hamburger on desktop
     top: 0;
     width: 250px;
     height: 100vh;
-    background-color: var(--color-dark); /* Simplified background color */
+    background-color: var(--color-dark);
     padding-top: 80px;
     transition: left 0.3s ease;
     z-index: 1001;
     color: var(--color-white);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .sidebar.open {
@@ -202,21 +219,22 @@ hide hamburger on desktop
 
 .sidebar .closebtn {
     position: absolute;
-    top: 10px; /* Adjusted position */
+    top: 10px;
     right: 20px;
-    font-size: 2.5rem; /* Used rem unit */
+    font-size: 2.5rem;
     color: var(--color-secondary);
     line-height: 1;
     font-weight: var(--fw-normal);
 }
 
-/* --- Hero Section --- (Split into two styles from original) */
 
-/* Style 1: With background image */
+/*
+|--------------------------------------------------------------------------
+| 5. HERO SECTION
+|--------------------------------------------------------------------------
+*/
 
-.hero-section {
-    padding: 96px;
-    }
+/* 5.1 Hero with Background Image (Use .hero-section-bg in HTML) */
 .hero-section-bg {
     background: url('images/himg.png') center/cover no-repeat;
     position: relative;
@@ -226,7 +244,7 @@ hide hamburger on desktop
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: var(--spacing-md);
     overflow: hidden;
 }
 
@@ -242,19 +260,19 @@ hide hamburger on desktop
     position: relative;
     z-index: 1;
     max-width: 700px;
-    padding: 30px; /* Increased padding */
+    padding: 30px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: var(--br-s);
     animation: fadeInUp 1s ease-in-out;
 }
 
 .hero-content h1 {
-    font-size: 3rem;
+    font-size: clamp(2rem, 7vw, 4rem); /* Fluid typography for image hero title */
     margin-bottom: 0.5rem;
 }
 
 .hero-content h3 {
-    font-weight: var(--fw-normal); /* Used variable */
+    font-weight: var(--fw-normal);
     margin-bottom: 1rem;
 }
 
@@ -263,32 +281,32 @@ hide hamburger on desktop
     margin-bottom: 1.5rem;
 }
 
-/* Style 2: Standard structure (Assuming the first style is the intended one, this is kept for reference but its rules are merged) */
-/* .hero-section {
-    padding-top: 150px;
+/* 5.2 Standard Content Hero (Use .hero-section in HTML) */
+.hero-section {
+    /* Removed padding: 96px; since padding-top is needed to clear fixed header */
+    padding-top: 120px; /* Default top padding to clear fixed header */
     min-height: 100vh;
     background: var(--color-primary);
-} */
+}
 
-/* Merged Details/Content for the non-background hero (if used) */
 .hero-section .section-content {
     display: flex;
     align-items: center;
-    min-height: calc(100vh - 150px); /* Adjusted height */
+    min-height: calc(100vh - 120px);
     color: var(--color-dark);
     justify-content: space-around;
-    font-size: clamp(2rem, 7vw = 1rem, 4rem);
+    /* REMOVED: font-size: clamp(2rem, 7vw = 1rem, 4rem); - Was a syntax error and misplaced here */
 }
 
 .hero-image-wrapper {
-    max-width: 500px; /* Consistent max width */
+    max-width: 500px;
     margin-right: 35px;
 }
 
 .hero-details .title {
     font-size: clamp(1.8rem, 5vw + 1rem, 2.8rem);
     color: var(--color-secondary);
-    margin-top: -60px; /* Use sparingly, better to adjust content flow */
+    margin-top: -60px; /* Use carefully, better to adjust alignment */
 }
 
 .hero-details .description {
@@ -297,12 +315,7 @@ hide hamburger on desktop
     font-size: var(--fs-m);
 }
 
-.button-wrapper {
-    /* This seems to be an outer container, better to style the buttons directly */
-    /* display: inline-flex; */
-    gap: 12px;
-}
-
+/* Button Styles */
 .embark-btn, .contact-btn, .btn-primary {
     background-color: var(--color-secondary);
     color: var(--color-white);
@@ -311,12 +324,12 @@ hide hamburger on desktop
     font-weight: var(--fw-bold);
     border-radius: 6px;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* Essential for padding/sizing on anchor tags */
+    display: inline-block;
+    margin-right: 12px; /* Consistent spacing for button-wrapper effect */
 }
 
-/* Separate .btn.btn-primary from hero-overlay styling for reusability */
 .btn.btn-primary {
-    background-color: var(--color-accent); /* Used accent color */
+    background-color: var(--color-accent);
 }
 
 .embark-btn:hover, .contact-btn:hover, .btn-primary:hover {
@@ -330,26 +343,30 @@ hide hamburger on desktop
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Gallery Section --- */
+
+/*
+|--------------------------------------------------------------------------
+| 6. GALLERY SECTION
+|--------------------------------------------------------------------------
+*/
+
 .Gallery-section {
-    padding: 80px 20px; /* Consistent top/bottom padding */
+    padding: 80px 20px;
     background-color: #f9f9f9;
 }
 
 .Gallery-container {
-    /* FIX: Merged with .section-content and simplified */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px; /* Increased gap */
+    gap: 30px;
     padding: 0;
-    margin-top: 40px; /* Separated from header */
-    background-color: transparent; /* Removed explicit white background */
+    margin-top: 40px;
+    background-color: transparent;
 }
 
 .Gallery-container .section-title {
     color: var(--color-secondary);
     text-decoration: underline;
-    /* FIX: Removed position: relative as it's often unnecessary */
 }
 
 .Gallery-list {
@@ -366,7 +383,7 @@ hide hamburger on desktop
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     overflow: hidden;
     transition: transform 0.3s ease;
-    text-align: center; /* Applied to item for caption/name */
+    text-align: center;
 }
 
 .Gallery-item:hover {
@@ -377,248 +394,7 @@ hide hamburger on desktop
     width: 100%;
     max-height: 360px;
     object-fit: cover;
-    display: block; /* Removed float */
 }
 
 .name {
-    font-size: 1.2rem;
-    font-weight: var(--fw-bold);
-    margin: 10px 10px 5px; /* Better margin control */
-    color: #333;
-}
-
-.text {
-    font-size: var(--fs-n);
-    margin: 0 10px 15px;
-    color: #666;
-}
-
-.video-wrapper {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    border-radius: var(--br-s);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 800px;
-    margin: 0 auto; /* Center the wrapper */
-}
-
-.video-wrapper iframe, .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* FIX: Removed conflicting and specific .video-item video styles */
-/* .video-item video { ... } */
-
-.caption {
-    margin-top: 8px;
-    font-size: var(--fs-n);
-    color: #555;
-}
-
-/* FIX: Deleted unnecessary/conflicting gallery styles */
-/* .Gallery-section h1 { ... } */
-/* .Gallery-img { ... } */
-/* .Gallery-item img { ... } */
-/* .gallery-item { ... } */
-
-/* --- About Section --- */
-.about-section {
-    padding: 80px 20px;
-    background-color: var(--color-accent);
-}
-
-.about-container {
-    /* FIX: Used .section-content class instead of duplicating styles */
-    /* max-width: var(--site-max-width); */
-    /* margin: auto; */
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    text-align: left;
-}
-
-.about-text-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-.about-title {
-    font-size: var(--fs-xl);
-    color: var(--color-white);
-    margin-bottom: 25px;
-    border-left: 5px solid var(--color-secondary);
-    padding-left: 15px;
-    line-height: 1.2;
-}
-
-.about-description {
-    /* FIX: Used a defined variable color */
-    color: var(--color-white);
-    margin-bottom: 20px;
-    font-size: var(--fs-m);
-}
-
-.about-image-wrapper {
-    flex: 1;
-    text-align: right;
-}
-
-.about-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--br-s);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.about-btn {
-    margin-top: 20px; /* Reduced margin */
-    display: inline-block;
-}
-
-/* --- Contact Page Styles --- */
-.contact-page-main {
-    padding-top: 100px; /* Reduced for better spacing */
-    padding: 2rem 1rem;
-    max-width: var(--site-max-width);
-    margin: 0 auto;
-}
-
-.contacts-section {
-    padding: 3rem 0;
-    background-color: transparent;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-hero {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.contact-hero h1 {
-    font-size: 2.5rem;
-    color: var(--color-dark);
-    margin-bottom: 0.5rem;
-}
-
-.contact-hero p {
-    font-size: var(--fs-m);
-    color: #555;
-}
-
-.contact-content-wrapper {
-    display: flex;
-    gap: 4rem;
-    align-items: center;
-    background-color: var(--color-white);
-    padding: 30px;
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-details {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 0;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    font-size: var(--fs-m);
-}
-
-.contact-item i {
-    font-size: 1.5rem;
-    color: var(--color-secondary);
-    margin-right: 15px;
-    width: 30px;
-    text-align: center;
-}
-
-.contact-item strong {
-    font-weight: var(--fw-bold);
-    min-width: 80px;
-    display: inline-block;
-    color: var(--color-dark);
-}
-
-.contact-item a {
-    color: var(--color-dark);
-}
-
-.contact-item a:hover {
-    color: var(--color-secondary);
-    text-decoration: underline;
-}
-
-.contacts-image-wrapper {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.contact-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Map & Contact Form Sections --- */
-.map-section {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.map-section h2 {
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    color: #333;
-}
-
-.map-embed {
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: var(--br-s);
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.map-embed iframe {
-    width: 100%;
-    height: 450px;
-    border: none;
-}
-
-.contact-form-section { /* Renamed for clarity */
-    padding: 40px 20px;
-    background-color: #f4f4f4;
-    text-align: center;
-    margin-top: 50px;
-}
-
-.contact-form-section form {
-    max-width: 500px;
-    margin: 0 auto 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form-section input,
-.contact-form-section
+    font
