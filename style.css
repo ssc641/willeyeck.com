@@ -268,6 +268,7 @@ header {
     min-height: calc(100vh - 150px); /* Adjusted height */
     color: var(--color-dark);
     justify-content: space-around;
+    font-size: clamp(2rem, 7vw = 1rem, 4rem);
 }
 
 .hero-image-wrapper {
@@ -276,7 +277,7 @@ header {
 }
 
 .hero-details .title {
-    font-size: var(--fs-xxl);
+    font-size: clamp(1.8rem, 5vw + 1rem, 2.8rem);
     color: var(--color-secondary);
     margin-top: -60px; /* Use sparingly, better to adjust content flow */
 }
