@@ -111,6 +111,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -138,6 +139,30 @@ header {
     color: var(--color-dark);
     line-height: 1; /* Ensures text aligns well */
 }
+/* Global Logo Text Spans - Hide the mobile version by default */
+.logo-text-mobile {
+    display: none;
+}
+
+/* 10. MEDIA QUERIES (RESPONSIVENESS) - Inside @media screen and (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    /* ... other mobile styles ... */
+    
+    /* Logo Text Visibility Toggle */
+    .logo-text-main {
+        /* On small screens, hide "Willeyeck Engineering" */
+        display: none; 
+    }
+    
+    .logo-text-mobile {
+        /* On small screens, show the shortened "& Construction" */
+        display: inline;
+        /* Apply a smaller font size here if the clamp isn't working perfectly */
+        font-size: 1rem; 
+    }
+    
+    /* ... rest of the mobile styles ... */
+    }
 
 .nav-menu {
     display: flex;
