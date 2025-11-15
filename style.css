@@ -207,18 +207,22 @@ header {
     transition: transform 0.3s ease;
 }
 
+
 .sidebar {
     left: -250px;
     position: fixed;
     top: 0;
     width: 250px;
     height: 100vh;
-    background-color: var(--color-dark);
+    /* 🔑 CHANGE: Use the transparent dark color */
+    background-color: var(--color-dark-t); 
     padding-top: 80px;
     transition: left 0.3s ease;
     z-index: 1001;
-    color: var(--color-white);
+    color: var(--color-white); /* Keep text white for contrast */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    /* OPTIONAL: Add frosted glass effect */
+    backdrop-filter: blur(5px);
 }
 
 .sidebar.open {
