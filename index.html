@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willeyeck Engineering - Contact Us</title>
+    <title>Willeyeck Engineering - Contacts</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -23,74 +23,52 @@
                 <li><a href="#" class="nav-link">Reviews</a></li>
                 <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
                 <li><a href="Contacts.html" class="nav-link current-page">Contacts</a></li>
-            </ul>
+                </ul>
         </nav>
     </header>
 
-    <div class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation menu">
-        <i class="fas fa-bars"></i>
+    <div class="hamburger" onclick="toggleSidebar()">
+        <i class="fas fa-bars"></i> 
     </div>
 
     <div class="sidebar" id="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()" aria-label="Close sidebar">×</a>
-    <a href="index.html">Home</a>
-    <a href="#">Reviews</a> 
-    <a href="Gallery.html">Gallery</a>
-    <a href="Contacts.html" class="current-page">Contacts</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="#">Reviews</a>
+        <a href="Gallery.html">Gallery</a>
+        <a href="Contacts.html" class="current-page">Contacts</a>
     </div>
 
-    <main class="contact-page-main">
-        
-        <section class="contact-hero">
-            <div class="section-content">
-                <h1>Get in Touch With Us</h1>
-                <p>We're here to answer your questions and help you start your next project.</p>
+    <main>
+        <section class="hero-section-bg">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>Your Vision, Your Future</h1>
+                    <h3>Building your dreams side by side</h3>
+                    <p>Willeyeck Engineering PVT — your trusted partner for safe, visionary, life-changing construction.</p>
+                    <a href="Contacts.html" class="btn btn-primary">Talk to Us</a>
+                </div>
             </div>
         </section>
 
-        <section class="contacts-section">
-            <div class="section-content contact-content-wrapper">
-                
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <strong>Address:</strong> Office 210A, Old Mutual Building, CABS Gweru
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone-alt"></i>
-                        <strong>Phone:</strong> <a href="tel:0771234567">+263 77 123 4567</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <strong>Email:</strong> <a href="mailto:info@willeyeck.com">info@willeyeck.com</a>
-                    </div>
-                    </div>
-                
-                <div class="contacts-image-wrapper">
-                    <img src="images/contact_placeholder.jpg" alt="Contact Us Illustration" class="contact-image" />
+        <section class="about-section" id="about">
+            <div class="section-content about-container"> <div class="about-text-content"> <h2 class="about-title">About Willeyeck Engineering</h2> <p class="about-description">
+                        At Willeyeck, we believe in your vision for a better future. Our mission is to turn that vision into reality — whether it’s a dream home, a safe space for your family, or a transformative project for your company.
+                    </p>
+                    <ul class="about-services">
+                        <li><i class="fas fa-drafting-compass"></i> House Plan Drawing</li>
+                        <li><i class="fas fa-tools"></i> Plumbing & Construction</li>
+                        <li><i class="fas fa-hard-hat"></i> Roofing & Tiling</li>
+                        <li><i class="fas fa-bolt"></i> Electrical Wiring</li>
+                    </ul>
+                    <p class="about-description">
+                        Our experienced team of engineers and specialists tackle every challenge with a solution-oriented mindset. We don’t just build structures — we build partnerships, trust, and excellence.
+                    </p>
+                    <p class="about-description"><strong>Location:</strong> Office 210A, Old Mutual Building, CABS Gweru</p>
+                    <a href="Contacts.html" class="btn btn-primary about-btn">Talk to an Expert</a>
                 </div>
                 
-            </div>
-        </section>
-
-        <section class="contact-form-section">
-            <div class="section-content">
-                <h2>Send Us a Message</h2>
-                <form>
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <input type="tel" placeholder="Your Phone (Optional)">
-                    <textarea rows="5" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-primary">Submit Inquiry</button>
-                </form>
-            </div>
-        </section>
-
-        <section class="map-section">
-            <div class="section-content">
-                <h2>Find Our Office</h2>
-                <div class="map-embed">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15259.080277353983!2d29.83984687259166!3d-19.46231221768407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1eb5501191060939%3A0x6b8c8d8c8d8c8d8c!2sGweru%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1633512345678!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+                <div class="about-image-wrapper"> <img src="images/logo4.png" alt="Willeyeck Engineering Logo" class="about-image" />
                 </div>
             </div>
         </section>
@@ -113,4 +91,4 @@
         });
     </script>
 </body>
-    </html>
+</html>
