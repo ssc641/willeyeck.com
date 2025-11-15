@@ -156,7 +156,22 @@ header {
 .nav-menu li:first-child {
     display: none;
 }
+/* --- 3.2 Menu Styles --- */
 
+.nav-menu {
+    display: flex; /* Default (Desktop) display */
+    gap: var(--spacing-md);
+    margin: 0;
+    padding: 0;
+}
+
+/* 🚨 ADD THIS RULE FOR MOBILE VISIBILITY CONTROL 🚨 */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        /* Force-hide the desktop menu on mobile */
+        display: none;
+    }
+}
 .nav-link {
     color: var(--color-text-dark);
     font-weight: var(--fw-medium);
