@@ -144,25 +144,30 @@ header {
     display: none;
 }
 
-/* 10. MEDIA QUERIES (RESPONSIVENESS) - Inside @media screen and (max-width: 768px) */
+/* 10. MEDIA QUERIES (RESPONSIVENESS) */
+
 @media screen and (max-width: 768px) {
-    /* ... other mobile styles ... */
     
-    /* Logo Text Visibility Toggle */
+    /* Logo Visibility Toggle & Sizing */
     .logo-text-main {
-        /* On small screens, hide "Willeyeck Engineering" */
+        /* Hides the long part on mobile */
         display: none; 
     }
     
     .logo-text-mobile {
-        /* On small screens, show the shortened "& Construction" */
+        /* Shows the short part on mobile */
         display: inline;
-        /* Apply a smaller font size here if the clamp isn't working perfectly */
-        font-size: 1rem; 
+        /* Force a small size to fit the screen */
+        font-size: 1rem !important; 
     }
     
-    /* ... rest of the mobile styles ... */
+    /* Force the main logo wrapper to be smaller */
+    .logo-text {
+        font-size: 1rem !important;
     }
+    
+    /* ... rest of your mobile styles ... */
+}
 
 .nav-menu {
     display: flex;
