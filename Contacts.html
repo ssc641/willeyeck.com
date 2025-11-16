@@ -1,37 +1,37 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Willeyeck Engineering - Contacts</title>
+    <title>Willeyeck Engineering - Contact Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <header>
-        <nav class="navbar selection-content">
+        <nav class="navbar section-content">
             <a href="index.html" class="nav-logo">
                 <img src="images/logo4.png" alt="Willeyeck Engineering company logo" class="logo-img" />
-                <h2 class="logo-text">Willeyeck Engineering & Construction</h2>
+                <h2 class="logo-text">
+                    <span class="logo-text-main">Willeyeck Engineering & Construction</span>
+                    <span class="logo-text-mobile">& Construction</span>
+                </h2>
             </a>
             <ul class="nav-menu">
-
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="#" class="nav-link">Reviews</a></li>
                 <li><a href="Gallery.html" class="nav-link">Gallery</a></li>
                 <li><a href="Contacts.html" class="nav-link current-page">Contacts</a></li>
-                <li><a href="index.html" class="nav-link">Home</a></li>
-            </ul>
+                </ul>
         </nav>
     </header>
 
-    <div class="hamburger" onclick="toggleSidebar()">
-        ☰
+    <div class="hamburger" onclick="toggleSidebar()" aria-label="Toggle navigation menu">
         <i class="fas fa-bars"></i>
     </div>
 
     <div class="sidebar" id="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()" aria-label="Close sidebar">&times;</a>
         <a href="index.html">Home</a>
         <a href="#">Reviews</a>
         <a href="Gallery.html">Gallery</a>
@@ -39,26 +39,28 @@
     </div>
 
     <main class="contact-page-main">
-        <section class="contacts-section">
-            <div class="contact-hero">
-                <h1>Contact Us</h1>
+        
+        <section class="contact-hero">
+            <div class="section-content"> 
+                <h1>Contact Willeyeck Engineering</h1>
                 <p>Feel free to reach out to us with any questions or concerns. We are here to help!</p>
             </div>
+        </section>
 
-            <div class="contact-content-wrapper">
-
+        <section class="contacts-section">
+            <div class="section-content contact-content-wrapper">
                 <div class="contact-details">
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <p><strong>Phone:</strong> +263 719 630 090</p>
+                        <p><strong>Phone 1:</strong> +263 719 630 090</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone-alt"></i>
-                        <p><strong>Phone:</strong> +263 772 630 090</p>
+                        <p><strong>Phone 2:</strong> +263 772 630 090</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-fax"></i>
-                        <p><strong>Tel:</strong> 054 2224 020</p>
+                        <p><strong>Tel/Fax:</strong> 054 2224 020</p>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
@@ -75,50 +77,55 @@
                 </div>
 
                 <div class="contacts-image-wrapper">
-                    <img src="images/ci.png" alt="Contact Us illustration" class="contact-image" />
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/6558596356081326672_0" 
+                         alt="Smiling Willeyeck Engineer ready to assist with blueprints" 
+                         class="contact-image" />
                 </div>
             </div>
         </section>
-    </main>
 
-    <section class="map-section">
-        <h2>Find Us on the Map</h2>
-        <div class="map-embed">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1880.9837546509084!2d29.8135659383863!3d-19.45696759545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x193494982c9dbbd3%3A0xdc9b49c29d1927ce!2sOld%20Mutual%20Gweru!5e0!3m2!1sen!2szw!4v1761452822802!5m2!1sen!2szw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-    </section>
+        <section class="contact-form-section">
+            <div class="section-content"> 
+                <h2>Get in Touch</h2>
+                <form action="mailto:info@willeyeck.engineering" method="post" enctype="text/plain">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Email</button>
+                </form>
+            </div>
+            
+            <a href="https://wa.me/263719630090" class="floating-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span class="tooltip">WhatsApp</span>
+            </a>
+        </section>
 
-    <section class="contact-section">
-        <h2>Get in Touch</h2>
-
-        <form action="mailto:info@willeyeck.engineering" method="post" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Email</button>
-        </form>
+        <section class="map-section">
+            <div class="section-content"> 
+                <h2>Find Us on the Map</h2>
+                <div class="map-embed">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1880.9837546509084!2d29.8135659383863!3d-19.45696759545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x193494982c9dbbd3%3A0xdc9b49c29d1927ce!2sOld%20Mutual%20Gweru!5e0!3m2!1sen!2szw!4v1761452822802!5m2!1sen!2szw" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
         
-
-      <a href="https://wa.me/263719630090" class="floating-whatsapp" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-  <span class="tooltip">WhatsApp</span>
-      </a>  
-    </section>
+    </main>
 
     <script>
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
-            // Toggles the 'open' class which is styled in CSS
-            sidebar.classList.toggle('open');
+            // Uses simple style toggle to match your existing CSS approach
+            sidebar.style.left = sidebar.style.left === "0px" ? "-250px" : "0px";
         }
 
         window.addEventListener('resize', function () {
             const sidebar = document.getElementById("sidebar");
             if (window.innerWidth > 768) {
-                // Ensure sidebar is closed when resizing to desktop view
-                sidebar.classList.remove('open');
+                // Ensures sidebar is closed when resizing to desktop view
+                sidebar.style.left = "-250px";
             }
         });
     </script>
 </body>
-</html>
+                                                                       </html>
