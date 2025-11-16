@@ -231,7 +231,7 @@ header {
 
 .sidebar a {
     display: block;
-    color: var(--color-white);
+    color: #191862;
     padding: 16px;
     text-decoration: none;
     font-weight: var(--fw-bold);
