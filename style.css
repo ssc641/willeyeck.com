@@ -144,6 +144,32 @@ header {
     display: none;
 }
 
+@media screen and (max-width: 768px) {
+    /* --- The Definitive Mobile Logo Fix --- */
+    
+    /* 1. HIDES the long text (desktop version) */
+    .logo-text-main {
+        display: none !important; 
+    }
+    
+    /* 2. SHOWS the short text (mobile version) */
+    .logo-text-mobile {
+        display: inline !important; 
+    }
+    
+    /* 3. FORCES the entire text block to a small size */
+    .logo-text {
+        font-size: 1rem !important; 
+    }
+    
+    /* Optional: Shrink the logo image itself to save space */
+    .logo-img {
+        height: 50px !important;
+    }
+
+    /* ... rest of your mobile styles ... */
+}
+
 /* --- 3.2 Menu Styles --- */
 .nav-menu {
     display: flex;
