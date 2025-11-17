@@ -527,11 +527,17 @@ header {
 | 8. CONTACT PAGE LAYOUT (Styles for the form and details)
 |--------------------------------------------------------------------------
 */
-
+.contact-hero {
+    padding-top: 130px;
+    padding-top: 40px
+    background-color: var(--color-primary);
+}
 .contact-form-section {
     padding: 60px 20px;
     background-color: #f4f4f4; /* Light background for contrast */
+    
 }
+
 
 .contact-form-section h2 {
     text-align: center;
