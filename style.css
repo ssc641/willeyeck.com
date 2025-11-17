@@ -532,6 +532,15 @@ header {
     padding-top: 40px
     background-color: var(--color-primary);
 }
+
+.contact-her h1{
+    font-size: var(--fd-xxl);
+    color: var(--color-dark);
+}
+
+.contact-hero p{
+    font-size: var(--fs-m);
+    color: var(--color-text-dark);
 .contact-form-section {
     padding: 60px 20px;
     background-color: #f4f4f4; /* Light background for contrast */
