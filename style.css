@@ -1,92 +1,135 @@
 /*
 |--------------------------------------------------------------------------
-| 8. CONTACT PAGE LAYOUT (Styles for the form and details)
+| 1. CSS VARIABLES (Design Tokens)
 |--------------------------------------------------------------------------
 */
 
-/* --- Fix for Overlapping Header (Contact Hero) --- */
-.contact-hero {
-    /* Pushes content down to clear fixed header */
-    padding-top: 130px; 
-    /* Ensures background color is set for the padded area */
-    background-color: var(--color-primary); 
-    padding-bottom: 40px; /* Separates it from the next section */
+:root {
+    /* Colors */
+    --color-white: #FFFFFF;
+    --color-dark: #191862;
+    --color-primary: #FFFFFF;
+    --color-secondary: #FF6A00;
+    --color-accent: #F9A825;
+    --color-medium: #B0B0B0;
+    --color-text-dark: #333333;
+    
+    /* Variables for Transparency (needed for sidebar/navbar) */
+    --color-primary-t: rgba(255, 255, 255, 0.9); /* Transparent White */
+    --color-dark-t: rgba(25, 24, 98, 0.9);      /* Transparent Dark Blue */
+
+    /* Font Size */
+    --fs-s: 0.9rem;
+    --fs-n: 1rem;
+    --fs-m: 1.12rem;
+    --fs-l: 1.5rem;
+    --fs-xl: 2rem;
+    --fs-xxl: 2.3rem;
+
+    /* Font Weight */
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Border Radius */
+    --br-s: 8px;
+    --br-m: 30px;
+    --br-circle: 50%;
+
+    /* Site Max Width */
+    --site-max-width: 1300px;
+
+    /* Spacing */
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
 }
 
-.contact-hero h1 {
-    font-size: var(--fs-xxl);
+
+/*
+|--------------------------------------------------------------------------
+| 2. GLOBAL RESET & BASE STYLES
+|--------------------------------------------------------------------------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Miniver', Calibri, sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
     color: var(--color-dark);
 }
 
-.contact-hero p {
-    font-size: var(--fs-m);
-    color: var(--color-text-dark);
-}
-
-/* --- Contact Form Styling (This was also affected by the syntax errors above) --- */
-.contact-form-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4; /* Light background for contrast */
-}
-
-.contact-form-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--color-dark);
-    font-size: var(--fs-xl);
-}
-
-.contact-form-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 30px;
-    background: var(--color-white);
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form-section form input[type="text"],
-.contact-form-section form input[type="email"],
-.contact-form-section form textarea {
-    padding: 15px;
-    border: 1px solid var(--color-medium);
-    border-radius: 4px;
-    font-size: var(--fs-n);
-    color: var(--color-text-dark);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form-section form input:focus,
-.contact-form-section form textarea:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.2);
-    outline: none;
-}
-
-.contact-form-section form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Styling the Submit Button */
-.contact-form-section form button[type="submit"] {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: var(--fs-m);
-    font-weight: var(--fw-bold);
+button {
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    letter-spacing: 1px;
-    margin-top: 10px;
+    border: none;
+    background: none;
 }
 
-.contact-form-section form button[type="submit"]:hover {
-    background-color: var(--color-dark);
-    transform: translateY(-1px);
-    }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-content {
+    max-width: var(--site-max-width);
+    margin: auto;
+    padding: 0 var(--spacing-md);
+}
+
+.title {
+    font-size: var(--fs-l);
+    font-weight: var(--fw-semibold);
+    letter-spacing: 1px;
+    margin-bottom: 0.4rem;
+}
+
+.subtitle {
+    font-size: var(--fs-m);
+    font-weight: var(--fw-medium);
+}
+
+
+/*
+|--------------------------------------------------------------------------
+| 3. HEADER & NAVIGATION
+|--------------------------------------------------------------------------
+*/
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    /* Uses transparent primary color */
+    background: var(--color-primary-t); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* Uses transparent primary color */
+    background-color: var(--color-primary-t);
+}
+
+/* --- 3.1 Logo Styles --- */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-img {
