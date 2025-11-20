@@ -484,7 +484,7 @@ header {
     font-size: var(--fs-xl);
     color: var(--color-white);
     
-    /* INCREASED SPACE BELOW TITLE: Changed from 25px to 40px */
+    /* Increased space below title */
     margin-bottom: 40px; 
     border-left: 5px solid var(--color-secondary);
     padding-left: 15px;
@@ -493,13 +493,11 @@ header {
 
 .about-description {
     color: var(--color-white);
-    /* Added space above description: */
+    /* Added space above description */
     margin-top: 20px; 
     margin-bottom: 20px; 
     font-size: var(--fs-m);
 }
-
-/* ... (rest of the styles in this section) ... */
 
 .about-image-wrapper {
     flex: 1;
@@ -518,214 +516,67 @@ header {
     display: inline-block;
 }
 
+/*
+|--------------------------------------------------------------------------
+| 7.1 SERVICES / DETAILS SECTION (NEWLY ADDED & STYLED)
+|--------------------------------------------------------------------------
+*/
+
+.services-section {
+    padding: 80px 20px;
+    background-color: var(--color-white);
+    text-align: center;
+}
+
+.services-section .section-title {
+    color: var(--color-dark);
+    margin-bottom: 50px;
+    font-size: var(--fs-xl);
+}
+
+.services-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 30px;
+    justify-content: center;
+}
+
+.service-item {
+    background: #f4f4f4; 
+    padding: 30px;
+    border-radius: var(--br-s);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: calc(33.33% - 20px); 
+    min-width: 280px;
+}
+
+.service-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    margin-bottom: 15px;
+}
+
+.service-item h3 {
+    font-size: var(--fs-l);
+    color: var(--color-dark);
+    margin-bottom: 10px;
+}
+
+.service-item p {
+    font-size: var(--fs-n);
+    color: var(--color-text-dark);
+    line-height: 1.5;
+}
+
 
 /*
 |--------------------------------------------------------------------------
 | 8. CONTACT PAGE LAYOUT (FIXED & RESTORED)
 |--------------------------------------------------------------------------
 */
-
-/* --- FIX: Ensures contact-hero section clears the fixed header --- */
-.contact-hero {
-    padding-top: 130px; 
-    background-color: var(--color-primary); 
-    padding-bottom: 40px; 
-}
-
-.contact-hero h1 {
-    font-size: var(--fs-xxl);
-    color: var(--color-dark);
-}
-
-.contact-hero p {
-    font-size: var(--fs-m);
-    color: var(--color-text-dark);
-}
-
-/* --- Contact Form Styling --- */
-.contact-form-section {
-    padding: 60px 20px;
-    background-color: #f4f4f4;
-}
-
-.contact-form-section h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--color-dark);
-    font-size: var(--fs-xl);
-}
-
-.contact-form-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
-    padding: 30px;
-    background: var(--color-white);
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.contact-form-section form input[type="text"],
-.contact-form-section form input[type="email"],
-.contact-form-section form textarea {
-    padding: 15px;
-    border: 1px solid var(--color-medium);
-    border-radius: 4px;
-    font-size: var(--fs-n);
-    color: var(--color-text-dark);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form-section form input:focus,
-.contact-form-section form textarea:focus {
-    border-color: var(--color-secondary);
-    box-shadow: 0 0 0 3px rgba(255, 106, 0, 0.2);
-    outline: none;
-}
-
-.contact-form-section form textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-/* Styling the Submit Button */
-.contact-form-section form button[type="submit"] {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: var(--fs-m);
-    font-weight: var(--fw-bold);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    letter-spacing: 1px;
-    margin-top: 10px;
-}
-
-.contact-form-section form button[type="submit"]:hover {
-    background-color: var(--color-dark);
-    transform: translateY(-1px);
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| 9. FLOATING WHATSAPP BUTTON (RESTORED)
-|--------------------------------------------------------------------------
-*/
-
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px; 
-    right: 25px;  
-    z-index: 999; 
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 60px;
-    background-color: #25D366; 
-    color: var(--color-white);
-    border-radius: var(--br-circle);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.floating-whatsapp i {
-    font-size: 28px;
-}
-
-.floating-whatsapp:hover {
-    background-color: #128C7E;
-    transform: scale(1.1);
-}
-
-.floating-whatsapp .tooltip {
-    display: none; 
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| 10. MEDIA QUERIES (RESPONSIVENESS - FINAL & DEFINITIVE FIXES)
-|--------------------------------------------------------------------------
-*/
-
-/* --- 10.1 Desktop Override (769px and wider) --- */
-@media screen and (min-width: 769px) {
-    /* Ensures main menu is always visible on desktop */
-    .nav-menu {
-        display: flex !important;
-    }
-    /* Ensures hamburger is hidden on desktop */
-    .hamburger {
-        display: none !important;
-    }
-}
-
-/* --- 10.2 Mobile Layout (768px and smaller) --- */
-@media screen and (max-width: 768px) {
-
-    /* --- Logo Visibility Toggle & Sizing (The definitive FIX) --- */
-    .logo-text-main {
-        /* Hides the long part on mobile */
-        display: none !important;
-    }
-
-    .logo-text-mobile {
-        /* Shows the short part on mobile */
-        display: inline !important;
-    }
-
-    .logo-text {
-        /* Force the main logo wrapper to be smaller */
-        font-size: 1rem !important;
-    }
-    
-    .logo-img {
-        height: 50px !important;
-    }
-    /* --- END Logo Fix --- */
-
-
-    /* Hero Content Adjustment */
-    .hero-section .section-content {
-        flex-direction: column;
-        text-align: center;
-        min-height: auto;
-    }
-
-    .hero-section .hero-details .title {
-        margin-top: 20px;
-    }
-
-    .hero-details .description {
-        max-width: 100%;
-    }
-
-    .hero-image-wrapper {
-        margin-right: 0;
-        margin-top: 20px;
-    }
-
-    /* Gallery Adjustment */
-    .Gallery-container {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-    
-    /* WhatsApp Mobile Adjustment */
-    .floating-whatsapp {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
-    }
-    .floating-whatsapp i {
-        font-size: 24px;
-    }
-    }
