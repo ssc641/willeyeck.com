@@ -7,16 +7,16 @@
 :root {
     /* Colors */
     --color-white: #FFFFFF;
-    --color-dark: #191862;
+    --color-dark: #191862; /* Still used for titles/main content */
     --color-primary: #FFFFFF;
     --color-secondary: #FF6A00;
     --color-accent: #F9A825;
     --color-medium: #B0B0B0;
     --color-text-dark: #333333;
     
-    /* Variables for Transparency (needed for sidebar/navbar) */
+    /* Variables for Transparency (needed for navbar) */
     --color-primary-t: rgba(255, 255, 255, 0.9); /* Transparent White */
-    --color-dark-t: rgba(25, 24, 98, 0.9);      /* Transparent Dark Blue */
+    --color-dark-t: rgba(25, 24, 98, 0.9);      /* Transparent Dark Blue (now overridden by black for sidebar) */
 
     /* Font Size */
     --fs-s: 0.9rem;
@@ -209,7 +209,7 @@ header {
 
 /*
 |--------------------------------------------------------------------------
-| 4. HAMBURGER & SIDEBAR
+| 4. HAMBURGER & SIDEBAR (BLACK THEME RESTORED)
 |--------------------------------------------------------------------------
 */
 
@@ -218,13 +218,15 @@ header {
     font-size: 1.5rem;
     cursor: pointer;
     padding: 10px;
-    position: fixed;
+    /* Ensure it stays positioned correctly */
+    position: fixed; 
     top: 20px;
     right: 20px;
     z-index: 1002;
     background-color: transparent;
     border-radius: var(--br-s);
-    color: var(--color-secondary);
+    /* BLACK THEME FIX: Hamburger icon color set to black */
+    color: #000000; 
     transition: transform 0.3s ease;
 }
 
@@ -235,14 +237,14 @@ header {
     top: 0;
     width: 250px;
     height: 100vh;
-    /* Uses transparent dark color */
-    background-color: var(--color-dark-t); 
+    /* BLACK THEME FIX: Solid black background */
+    background-color: #000000; 
     padding-top: 80px;
     transition: left 0.3s ease;
     z-index: 1001;
     color: var(--color-white); 
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    /* REMOVED: backdrop-filter: blur(5px); for a solid look */
 }
 
 .sidebar.open {
@@ -251,7 +253,8 @@ header {
 
 .sidebar a {
     display: block;
-    color: var(--color-white); /* Use white text against the dark sidebar */
+    /* Links must be white on black background */
+    color: var(--color-white); 
     padding: 16px;
     text-decoration: none;
     font-weight: var(--fw-bold);
@@ -323,260 +326,3 @@ header {
 .hero-content p {
     font-size: var(--fs-m);
     margin-bottom: 1.5rem;
-}
-
-/* 5.2 Standard Content Hero (Use .hero-section in HTML) */
-.hero-section {
-    padding-top: 120px;
-    min-height: 100vh;
-    background: var(--color-primary);
-}
-
-.hero-section .section-content {
-    display: flex;
-    align-items: center;
-    min-height: calc(100vh - 120px);
-    color: var(--color-dark);
-    justify-content: space-around;
-}
-
-.hero-image-wrapper {
-    max-width: 500px;
-    margin-right: 35px;
-}
-
-.hero-details .title {
-    font-size: clamp(1.8rem, 5vw + 1rem, 2.8rem);
-    color: var(--color-secondary);
-    margin-top: -60px;
-}
-
-.hero-details .description {
-    max-width: 70%;
-    margin: 24px 0 40px;
-    font-size: var(--fs-m);
-}
-
-/* Animation */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| 6. GALLERY SECTION
-|--------------------------------------------------------------------------
-*/
-
-.Gallery-section {
-    padding: 80px 20px;
-    background-color: #f9f9f9;
-}
-
-.Gallery-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 0;
-    margin-top: 40px;
-    background-color: transparent;
-}
-
-.Gallery-container .section-title {
-    color: var(--color-secondary);
-    text-decoration: underline;
-}
-
-.Gallery-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.Gallery-item {
-    background: var(--color-white);
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    text-align: center;
-}
-
-.Gallery-item:hover {
-    transform: scale(1.03);
-}
-
-.Gallery-image {
-    width: 100%;
-    max-height: 360px;
-    object-fit: cover;
-}
-
-.name {
-    font-size: 1.2rem;
-    font-weight: var(--fw-bold);
-    margin: 10px 10px 5px;
-    color: var(--color-text-dark);
-}
-
-.text {
-    font-size: var(--fs-n);
-    margin: 0 10px 15px;
-    color: #666;
-}
-
-.video-wrapper {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: var(--br-s);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.video-wrapper iframe, .video-wrapper video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.caption {
-    margin-top: 8px;
-    font-size: var(--fs-n);
-    color: #555;
-}
-
-/*
-|--------------------------------------------------------------------------
-| 7. ABOUT SECTION
-|--------------------------------------------------------------------------
-*/
-
-.about-section {
-    padding: 80px 20px;
-    background-color: var(--color-accent);
-}
-
-.about-container {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    text-align: left;
-}
-
-.about-text-content {
-    flex: 1;
-    max-width: 600px;
-}
-
-
-.about-title {
-    font-size: var(--fs-xl);
-    color: var(--color-white);
-    
-    /* Increased space below title */
-    margin-bottom: 40px; 
-    border-left: 5px solid var(--color-secondary);
-    padding-left: 15px;
-    line-height: 1.2;
-}
-
-.about-description {
-    color: var(--color-white);
-    /* Added space above description */
-    margin-top: 20px; 
-    margin-bottom: 20px; 
-    font-size: var(--fs-m);
-}
-
-.about-image-wrapper {
-    flex: 1;
-    text-align: right;
-}
-
-.about-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: var(--br-s);
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.about-btn {
-    margin-top: 20px;
-    display: inline-block;
-}
-
-/*
-|--------------------------------------------------------------------------
-| 7.1 SERVICES / DETAILS SECTION (NEWLY ADDED & STYLED)
-|--------------------------------------------------------------------------
-*/
-
-.services-section {
-    padding: 80px 20px;
-    background-color: var(--color-white);
-    text-align: center;
-}
-
-.services-section .section-title {
-    color: var(--color-dark);
-    margin-bottom: 50px;
-    font-size: var(--fs-xl);
-}
-
-.services-list {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 30px;
-    justify-content: center;
-}
-
-.service-item {
-    background: #f4f4f4; 
-    padding: 30px;
-    border-radius: var(--br-s);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex-basis: calc(33.33% - 20px); 
-    min-width: 280px;
-}
-
-.service-item:hover {
-    transform: translateY(-5px); 
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-.service-icon {
-    font-size: 3rem;
-    color: var(--color-secondary);
-    margin-bottom: 15px;
-}
-
-.service-item h3 {
-    font-size: var(--fs-l);
-    color: var(--color-dark);
-    margin-bottom: 10px;
-}
-
-.service-item p {
-    font-size: var(--fs-n);
-    color: var(--color-text-dark);
-    line-height: 1.5;
-}
-
-
-/*
-|--------------------------------------------------------------------------
-| 8. CONTACT PAGE LAYOUT (FIXED & RESTORED)
-|--------------------------------------------------------------------------
-*/
