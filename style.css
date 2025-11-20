@@ -603,16 +603,16 @@ header {
     line-height: 1.5;
 }
 
+
 /*
 |--------------------------------------------------------------------------
-| 7.2 CONTACT DETAILS SECTION (NEWLY ADDED STYLING)
+| 7.2 CONTACT DETAILS SECTION (ALIGNED FIX)
 |--------------------------------------------------------------------------
 */
 
 .contact-details-section {
-    padding: 20px 0 40px; /* Some padding above and below */
+    padding: 20px 0 40px; 
     color: var(--color-text-dark);
-    /* Ensures this section starts below the fixed header */
     padding-top: 130px; 
 }
 
@@ -624,20 +624,34 @@ header {
 .contact-list {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Vertical space between each detail line */
+    gap: 15px; 
 }
 
 .contact-detail {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Aligns items to the top if the line wraps */
     font-size: var(--fs-m);
     color: var(--color-dark);
+}
+
+/* New Wrapper for Icon + Label to ensure fixed starting point */
+.contact-detail-label-wrapper {
+    display: flex;
+    align-items: flex-start;
+    /* Forces the icon and label block to take a fixed width */
+    min-width: 150px; 
+    max-width: 150px; 
 }
 
 .contact-detail .detail-label {
     font-weight: var(--fw-bold);
     margin-right: 5px;
-    white-space: nowrap; /* Keeps the label on one line */
+    white-space: nowrap; 
+}
+
+.contact-detail a, .contact-detail span {
+    /* Ensures the actual contact info (link/text) takes the remaining space */
+    flex-grow: 1; 
 }
 
 .contact-detail a {
@@ -647,9 +661,7 @@ header {
 
 .contact-detail a:hover {
     color: var(--color-secondary);
-}
-
-
+    }
 /*
 |--------------------------------------------------------------------------
 | 8. CONTACT PAGE LAYOUT (FIXED & RESTORED)
