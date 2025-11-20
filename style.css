@@ -244,6 +244,14 @@ header {
     transition: transform 0.3s ease;
 }
 
+/*
+|--------------------------------------------------------------------------
+| 4.1 SIDEBAR
+|--------------------------------------------------------------------------
+*/
+
+/* ... (The .hamburger block remains the same, black icon) ... */
+
 
 .sidebar {
     left: -250px;
@@ -251,14 +259,16 @@ header {
     top: 0;
     width: 250px;
     height: 100vh;
-    /* BLACK THEME FIX: Solid black background */
-    background-color: #000000; 
+    /* CHANGE: Revert to transparent white background with blur (like the header) */
+    background-color: var(--color-primary-t); 
     padding-top: 80px;
     transition: left 0.3s ease;
     z-index: 1001;
-    color: var(--color-white); 
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-    /* REMOVED: backdrop-filter: blur(5px); for a solid look */
+    /* CHANGE: Revert text color to dark (since background is light/white) */
+    color: var(--color-dark); 
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    /* Re-add blur for the 'colorless' (transparent) effect */
+    backdrop-filter: blur(5px);
 }
 
 .sidebar.open {
@@ -267,8 +277,8 @@ header {
 
 .sidebar a {
     display: block;
-    /* Links must be white on black background */
-    color: var(--color-white); 
+    /* CHANGE: Set link color to secondary orange */
+    color: var(--color-secondary); 
     padding: 16px;
     text-decoration: none;
     font-weight: var(--fw-bold);
@@ -276,7 +286,9 @@ header {
 }
 
 .sidebar a:hover {
-    background-color: var(--color-secondary);
+    /* CHANGE: Hover background should be light gray against the white background */
+    background-color: #f0f0f0; 
+    color: var(--color-dark); /* Optional: change text back to dark on hover */
 }
 
 .sidebar .closebtn {
